@@ -20,7 +20,7 @@ ONE , TWO , THREE , FOUR , FIVE,  *_ = range(100)
 #callback data
 owners = [163494588]
 
-updater = Updater(token='2114784645:AAE6vtKRhvmBussdmpmyw1ar1tNi4DuY3VM', use_context=True)
+updater = Updater(token='5006835603:AAElOkjovuA1-qyw2PD7ZRzXabuqnWoHncE', use_context=True)
 dispatcher = updater.dispatcher
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
