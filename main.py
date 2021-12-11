@@ -54,9 +54,9 @@ def start(update , context):
 
     exist = DB.get_user_value(conn , id, "white")
 
-    text = f"Welcome <b>{name}</b> to <u><b><i>Casino 482</i></b></u>\n\n" \
+    text = f"Welcome <b>{name}</b> to <u><b><i>Casino 482</i></b></u>\n\n"\
 
-           f"We have registered you under our player lists with your below information\n" \
+           f"We have registered you under our player lists with your below information\n"\
 
            f"\n# username : <code>{username}</code>\n# ID : <code>{id}</code>"
 
