@@ -647,3 +647,4 @@ dispatcher.add_handler(VALUE_HANDLER)
 logger = logging.getLogger()
 
 updater.start_polling(clean = True)
+parse_mode = ParseMode.HTML
