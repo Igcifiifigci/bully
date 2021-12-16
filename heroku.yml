@@ -1,0 +1,7 @@
+build:
+
+
+
+run:
+
+  worker: python3 -m main.py
