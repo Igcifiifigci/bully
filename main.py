@@ -45,27 +45,19 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
                     level=logging.INFO)
 
 def start(update , context):
-
     id = update.effective_user.id
-
     name = update.effective_user.first_name
-
     username = update.effective_user.name
+    user_registered = DB.get_user_value(id, "COUNT(*)")
 
-    exist = DB.get_user_value(conn , id, "white")
+    if user_registered:
+     return
 
     text = f"Welcome <b>{name}</b> to <u><b><i>Casino 482</i></b></u>\n\n" \
-
            f"We have registered you under our player lists with your below information\n" \
-
            f"\n# username : <code>{username}</code>\n# ID : <code>{id}</code>"
-
-    if exist == None:
-
-     context.bot.send_photo(chat_id = update.effective_chat.id, caption = text , photo = "https://telegra.ph/file/b50d95b7d42b2f866fcac.jpg", parse_mode=ParseMode.HTML)
-
-     DB.add_user(conn , id)
-
+    context.bot.send_photo(chat_id = update.effective_chat.id, caption = text , photo = "https://telegra.ph/file/b50d95b7d42b2f866fcac.jpg", parse_mode=ParseMode.HTML)
+    DB.add_user(id)
     else:
 
         context.bot.send_message(chat_id = update.effective_chat.id , text = "You are already a member")
